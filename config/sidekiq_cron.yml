@@ -1,0 +1,24 @@
+task_timeout_sweep:
+  cron: "* * * * *"
+  class: TaskTimeoutSweepWorker
+  queue: sweepers
+
+orphaned_task_sweep:
+  cron: "*/5 * * * *"
+  class: OrphanedTaskSweepWorker
+  queue: sweepers
+
+inspection_window:
+  cron: "*/5 * * * *"
+  class: InspectionWindowWorker
+  queue: default
+
+llm_retry:
+  cron: "0 * * * *"
+  class: LlmRetryWorker
+  queue: default
+
+jury_pattern_monitor:
+  cron: "0 */6 * * *"
+  class: JuryPatternMonitorWorker
+  queue: low

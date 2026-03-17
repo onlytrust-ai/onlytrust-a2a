@@ -1,0 +1,9 @@
+:concurrency: 10
+:queues:
+  - [critical, 6]
+  - [default, 3]
+  - [webhooks, 3]
+  - [blockchain, 2]
+  - [verification, 2]
+  - [sweepers, 1]
+  - [low, 1]
